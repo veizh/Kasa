@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import {  useNavigate } from "react-router-dom";
 import api from "../../api"
 import { Deroulant,DeroulantBis} from "../About/About";
+
 
 const Tag = (props)=>{
     return (
@@ -10,25 +12,33 @@ const Tag = (props)=>{
     )
 }
 const Logement = (props)=>{
+    const navigate= useNavigate()
     let [image,setImage]=useState(0)
     const urlParams = new URLSearchParams(window.location.search)
     const itemId = urlParams.get('id');
     const item = api.find((e)=>e.id===itemId)
+    useEffect(()=>{
+
+        if(item===undefined) navigate("/error",{replace:true});
+    },[])
+   
     //api.find est censé etre un fetch mais pas encore de bdd
-    const sizeArray = item.pictures.length
-    
-    function nextPhoto(i){
-        if(image + i<0){
-            setImage(sizeArray-1)
+    if(item===undefined) return <></>
+        const sizeArray = item.pictures.length
         
-        }
-        else if(image + i> sizeArray - 1){
-            setImage(0)
-        }
-        else{
-            setImage(image+i)
-        }
-    }
+    function nextPhoto(i){
+               if(image + i<0){
+                   setImage(sizeArray-1)
+            
+               }
+               else if(image + i> sizeArray - 1){
+                   setImage(0)
+               }
+               else{
+                   setImage(image+i)
+               }
+           }
+   
     const rate = parseInt(item.rating)
     return (
         <div className="containerLogemente">

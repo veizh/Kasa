@@ -29,6 +29,9 @@
         object-fit: cover;
     }
     .nav{
+        display: none;
+    }
+    .nav{
         padding: 0 10px;
         position: absolute;
         display: flex;
