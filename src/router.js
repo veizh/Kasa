@@ -1,7 +1,7 @@
 import './App.css';
 import {Routes,Route, Navigate} from 'react-router-dom'
-import Home from '../src/component/Home/Home'
-import About from '../src/component/About/About'
+import Home from './component/Home/Home'
+import About from './component/About/About'
 import Header from './component/header/header';
 import Footer from './component/footer/footer';
 import { useEffect, useRef, useState } from 'react';

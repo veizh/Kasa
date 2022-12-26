@@ -14,9 +14,10 @@ const Logement = (props)=>{
     const urlParams = new URLSearchParams(window.location.search)
     const itemId = urlParams.get('id');
     const item = api.find((e)=>e.id===itemId)
+    //api.find est censé etre un fetch mais pas encore de bdd
+    const sizeArray = item.pictures.length
     
     function nextPhoto(i){
-        const sizeArray = item.pictures.length
         if(image + i<0){
             setImage(sizeArray-1)
         
@@ -33,7 +34,7 @@ const Logement = (props)=>{
         <div className="containerLogemente">
             <div className="containerImg">
                 <img src={item.pictures[image]} alt="chambre" />
-                <div className="nav">
+                <div className={sizeArray===1?"nav ":"nav visible"} >
                     <img className="gauche" src="../fleche.svg" onClick={()=> nextPhoto(-1)} alt="fleche pointant à gauche" />
                     <img className="droite" src="../fleche.svg" onClick={()=> nextPhoto(1)} alt="fleche pointant à droite" />
 
@@ -63,7 +64,7 @@ const Logement = (props)=>{
                 </div>
                 <div className="profile">
                     <p>{item.host.name}</p>
-                    <img src={item.host.picture} alt="photo de profil" />
+                    <img src={item.host.picture} alt="profil du loueur" />
 
                 </div>
             </div>

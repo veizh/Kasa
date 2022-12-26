@@ -5,7 +5,7 @@ import './styles/error.css';
 import './styles/logement.css';
 
 
-import App from './App';
+import App from './router';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
