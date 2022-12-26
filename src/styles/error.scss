@@ -1,0 +1,51 @@
+@import './mixins/responsive';
+.containerError{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 65vh;
+color: #FF6060;
+@include desktop{
+    height: 55vh;
+    justify-content: space-between;
+}
+    h1{
+        font-size: 96px;
+        font-weight: bold;
+        @include tablet{
+            font-size: 160px;
+        }
+        @include desktop{
+            font-size: 288px;
+        }
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+        @include tablet{
+            font-size: 22px;
+        }
+        @include desktop{
+            font-size: 28px;
+        }
+    }
+    a{
+        all:unset;
+        margin-top: 15vh;
+        color: #FF6060;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: underline;
+        @include tablet{
+            font-size: 20px;
+            margin-top: 8vh;
+        }
+        @include desktop{
+            justify-self: flex-end;
+            margin-top: 0;
+            font-size: 24px;
+        }
+    }
+}

@@ -1,0 +1,252 @@
+@import './mixins/responsive';
+.containerLogemente{
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    max-width: 1250px;
+    margin: auto;
+    .containerImg{
+        display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 255px;
+    width: 100%;
+    @include desktop{
+        height: 415px;
+    }
+    .col{
+        @include desktop{
+            flex-direction: column;
+            display: flex;
+        }
+    }
+    img{
+        width: 100%;
+        border-radius: 10px;
+        height: 100%;
+        object-fit: cover;
+    }
+    .nav{
+        padding: 0 10px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 5;
+        img{
+            width: 35px;
+            height:15px;
+            cursor: pointer;
+            @include desktop{
+                height: 49px;
+                width: 80px;
+            }
+        }
+        .gauche{
+            transform: rotateZ(90deg);
+        }
+        .droite{
+            transform: rotateZ(-90deg);
+        }
+    }
+
+    }
+    .title{
+        width: 100%;
+        font-size: 18px;
+        color: #FF6060;
+        line-height: 40px;
+        font-weight: 500;
+        margin-top: 15px;
+        @include tablet{
+            font-size: 36px;
+                
+            }
+    }
+    .location{
+        width: 100%;
+        font-size: 14px;
+        color: #FF6060;
+        line-height: 25px;
+        font-weight: 500;
+        @include tablet{
+        font-size: 18px;
+            
+        }
+    }
+    .containerTag{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        gap: 20px;
+        .tag{
+            background-color: #FF6060;
+            color: white;
+            padding: 2px 15px;
+            min-width: 84px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 12px;
+            @include tablet{
+                font-size: 14px;
+                border-radius: 10px;
+                    
+                }
+        }
+    }
+    .spaced{
+        @include desktop{
+            margin-top: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .rateProfile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 10px;
+        @include desktop{
+            flex-direction: column;
+            display: flex;
+            justify-content: space-around;
+            gap:15px;
+        }
+        .profile{
+            display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        order: 1;
+        @include tablet{
+            gap: 25px;
+        }
+        
+            p{
+                font-size: 14px;
+                width: 90px;
+                text-align: end;
+                @include tablet{
+                    font-size: 22px;
+                }
+            }
+            img{
+                margin-left: 25px;
+                clip-path: circle();
+                width: 32px;
+                
+                aspect-ratio: 1/1;
+                @include tablet{
+                    width: 64px;
+                    margin-left: 0;
+                }
+            }
+        }
+        .rating{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            @include tablet{
+                order: 2;
+            }
+            .star{
+                width: 15px;
+                height: 15px;
+                @include tablet{
+                    width: 30px;
+                    height: 30px;
+                }
+
+            }
+            .fill{
+                color: #FF6060;
+            }
+        }
+        
+    }
+    .containerInfo{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        @include desktop{
+            flex-direction: row;
+            gap: 48px;
+        }
+    }
+    .menu{
+        font-size: 13px;
+        line-height: 15px;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: #ececec;
+        height: min-content;
+        cursor: pointer;
+        @include tablet{
+            font-size: 18px;
+                
+        }
+          .containerContent{
+            background-color: #ececec;
+            padding: 10px 12px 30px 12px;
+            color: #FF6060;
+            line-height: 18px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            @include desktop{
+                padding: 20px 25px 30px 25px;
+                font-weight: 700;
+            }
+            p{
+                height: 20px;
+                font-size: 14px;
+                margin-bottom: 5px;
+                @include tablet{
+                    font-size: 18px;
+                        
+                    }
+            }
+
+          }
+          img{
+            transform: rotateX(0deg);
+            transition: all 0.25s ease-in-out;
+          }
+          &.open >.barre>img{
+            transition: all 0.25s ease-in-out;
+            transform: rotateX(180deg) ;
+          }
+          .barre{
+            background-color: #FF6060;
+            border-radius: 10px;
+            padding: 10px 12px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include desktop{
+                padding: 10px 25px ;
+            }
+            p{
+              color: white;
+            font-weight: 600;
+            }
+          }
+        
+      }
+    
+   
+       
+}

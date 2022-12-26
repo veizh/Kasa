@@ -1,0 +1,64 @@
+.containerError {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 65vh;
+  color: #FF6060;
+}
+@media (min-width: 992px) {
+  .containerError {
+    height: 55vh;
+    justify-content: space-between;
+  }
+}
+.containerError h1 {
+  font-size: 96px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .containerError h1 {
+    font-size: 160px;
+  }
+}
+@media (min-width: 992px) {
+  .containerError h1 {
+    font-size: 288px;
+  }
+}
+.containerError p {
+  font-size: 18px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .containerError p {
+    font-size: 22px;
+  }
+}
+@media (min-width: 992px) {
+  .containerError p {
+    font-size: 28px;
+  }
+}
+.containerError a {
+  all: unset;
+  margin-top: 15vh;
+  color: #FF6060;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .containerError a {
+    font-size: 20px;
+    margin-top: 8vh;
+  }
+}
+@media (min-width: 992px) {
+  .containerError a {
+    justify-self: flex-end;
+    margin-top: 0;
+    font-size: 24px;
+  }
+}/*# sourceMappingURL=error.css.map */
